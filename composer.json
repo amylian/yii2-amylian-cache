@@ -1,0 +1,9 @@
+{
+  "name": "amylian/yii2-amylian-cache",
+  "type": "yii2-extension",
+  "autoload": {
+    "psr-4": {
+      "abexto\\amylian\\yii\\cache\\": "src/"
+    }
+  }
+}
