@@ -8,6 +8,7 @@ php:
   - 7.2
 
 services:
+    - mysql
     - riak
     - mongodb
     - memcached
@@ -22,8 +23,8 @@ before_install:
     
 env:
     global:
-      - db_username=travis
-      - db_password=
+        - db_username=travis
+        - db_password=
 
 # cache vendor dirs
 cache:
