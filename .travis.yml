@@ -21,7 +21,7 @@ before_install:
     - mysql -e 'CREATE DATABASE abexto_amylian_tests;
     
 env:
-    - db_username=travian
+    - db_username=travis
     - db_password=
 
 # cache vendor dirs
