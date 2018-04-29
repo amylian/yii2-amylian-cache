@@ -18,7 +18,6 @@ before_install:
     - pecl channel-update pecl.php.net
     - echo yes | pecl upgrade apcu
 
-
 # cache vendor dirs
 cache:
   directories:
