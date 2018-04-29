@@ -22,9 +22,9 @@ before_install:
     - mysql -e 'CREATE DATABASE abexto_amylian_tests;
     
 env:
-    global:
-        - db_username=travis
-        - db_password=
+  global:
+    - db_username=travis
+    - db_password=
 
 # cache vendor dirs
 cache:
