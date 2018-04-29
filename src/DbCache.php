@@ -32,35 +32,15 @@
  * 
  */
 
-namespace abexto\amylian\yii\cache\common;
+namespace abexto\amylian\yii\cache;
 
 /**
+ * Description of DbCache
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-trait CacheTrait
+class DbCache extends \yii\caching\DbCache
 {
-
-    public $active        = true;
-    private $_maxItemSize = null;
-
-    public function getMaxItemSize()
-    {
-        return $this->_maxItemSize;
-    }
-
-    public function setMaxItemSize($aValue)
-    {
-        $this->_maxItemSize = $aValue;
-    }
-
-    protected function canSave($value)
-    {
-        if (is_string($value) && $this->_maxItemSize !== null) {
-            return strlen($value) <= $this->_maxItemSize;
-        } else {
-            return true;
-        }
-    }
-
+    use common\CacheTrait;
+    use common\CacheDefaultOverrideTrait;
 }

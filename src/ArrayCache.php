@@ -14,4 +14,5 @@ namespace abexto\amylian\yii\cache;
 class ArrayCache extends \yii\caching\ArrayCache implements common\CacheInterface
 {
     use common\CacheTrait;
+    use common\CacheDefaultOverrideTrait;
 }

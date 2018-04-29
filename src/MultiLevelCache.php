@@ -14,7 +14,7 @@ namespace abexto\amylian\yii\cache;
 class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\cache\common\CacheInterface
 {
 
-    use \abexto\amylian\yii\cache\common\CacheTrait;
+    use common\CacheTrait;
 
     /**
      * @var Array Array of cache components

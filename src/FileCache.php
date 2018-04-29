@@ -14,4 +14,5 @@ namespace abexto\amylian\yii\cache;
 class FileCache extends \yii\caching\FileCache implements common\CacheInterface
 {
     use common\CacheTrait;
+    use common\CacheDefaultOverrideTrait;
 }

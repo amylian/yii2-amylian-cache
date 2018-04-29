@@ -14,4 +14,5 @@ namespace abexto\amylian\yii\cache;
 class ApcCache extends \yii\caching\ApcCache implements common\CacheInterface
 {
     use common\CacheTrait;
+    use common\CacheDefaultOverrideTrait;
 }

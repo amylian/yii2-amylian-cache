@@ -16,17 +16,28 @@ abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYii
 
     protected $_initialSetupDone = false;
     protected $_initialData      = [];
-
-    protected function initialSetup($overrideConfig)
+    
+    protected function initialMockApplication($overrideConfig)
     {
         static::mockYiiConsoleApplication(\yii\helpers\ArrayHelper::merge(['components' => ['cache' => ['maxItemSize' => 0xFFFF
                         ]]], $overrideConfig));
+    }
+    
+    protected function generateTestCacheEntries()
+    {
         \Yii::$app->cache->flush();
         for ($n = 0; $n < 10; $n++) {
             $k                      = 'key' . $n;
             $this->_initialData[$k] = new \abexto\amylian\yii\cache\tests\classes\TestData($n);
             \Yii::$app->cache->add($k, $this->_initialData[$k]);
         }
+    }
+
+    
+    protected function initialSetup($overrideConfig)
+    {
+        $this->initialMockApplication($overrideConfig);
+        $this->generateTestCacheEntries();
     }
 
     abstract function getYiiTestConfiguration();
