@@ -11,7 +11,7 @@ namespace abexto\amylian\yii\cache\tests\classes;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class TestData extends \yii\base\Object
+class TestData extends \yii\base\BaseObject
 {
     
     public $f1 = null;
