@@ -19,7 +19,7 @@ before_install:
     - pecl channel-update pecl.php.net
     - echo yes | pecl upgrade apcu
     - phpenv config-add ./tests/_travis/php.ini
-    - mysql -e 'CREATE DATABASE abexto_amylian_tests;
+    - mysql -e 'CREATE DATABASE abexto_amylian_tests';
 
 # cache vendor dirs
 cache:
