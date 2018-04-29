@@ -18,8 +18,7 @@ class ApcCacheTest extends AbstractCacheTest
         return [
             'components' => [
                 'cache' => [
-                    'class' => \abexto\amylian\yii\cache\ApcCache::class,
-                    'useApcu' => true
+                    'class' => \abexto\amylian\yii\cache\ApcCache::class
                 ]
             ]
         ];
