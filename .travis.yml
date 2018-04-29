@@ -7,9 +7,6 @@ php:
   - 7.1
   - 7.2
 
-env:
-  - db_username=travis db_password=
-
 services:
     - mysql
     - riak
@@ -33,6 +30,9 @@ install:
   - travis_retry composer self-update && composer --version
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - travis_retry composer install --prefer-dist --no-interaction
+  
+before_script:
+  - cp tests/_travis/phpunit.xml phpunit.xml
 
 script:
   - phpunit $PHPUNIT_FLAGS
