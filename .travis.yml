@@ -7,6 +7,9 @@ php:
   - 7.1
   - 7.2
 
+env:
+  - db_username=travis db_password=
+
 services:
     - mysql
     - riak
@@ -32,6 +35,4 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
 
 script:
-  - export db_username=travis
-  - export db_password=
   - phpunit $PHPUNIT_FLAGS
