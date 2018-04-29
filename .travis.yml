@@ -32,7 +32,8 @@ install:
   - travis_retry composer install --prefer-dist --no-interaction
   
 before_script:
-  - cp ./tests/_travis/.env .env
+  - export db_username=travis
+  - export db_password=
 
 script:
   - phpunit $PHPUNIT_FLAGS
