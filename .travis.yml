@@ -30,8 +30,9 @@ install:
   - travis_retry composer self-update && composer --version
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - travis_retry composer install --prefer-dist --no-interaction
-  - export db_username=travis
-  - export db_password=
+  
+before_script:
+  - cp ./tests/_travis/.env .env
 
 script:
   - phpunit $PHPUNIT_FLAGS
