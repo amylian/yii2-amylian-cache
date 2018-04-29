@@ -17,6 +17,7 @@ services:
 before_install:
     - pecl channel-update pecl.php.net
     - echo yes | pecl upgrade apcu
+    - phpenv config-add ./tests/_travis/php.ini
 
 # cache vendor dirs
 cache:
