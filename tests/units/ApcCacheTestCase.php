@@ -11,14 +11,15 @@ namespace abexto\amylian\yii\cache\tests\units;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class FileCacheTestCase extends AbstractCacheTestCase
+class ApcCacheTestCase extends AbstractCacheTestCase
 {
     public function getYiiTestConfiguration()
     {
         return [
             'components' => [
                 'cache' => [
-                    'class' => \abexto\amylian\yii\cache\FileCache::class
+                    'class' => \abexto\amylian\yii\cache\ApcCache::class,
+                    'useApcu' => true
                 ]
             ]
         ];

@@ -27,7 +27,7 @@ trait CacheTrait
 
     protected function canSave($value)
     {
-        if (is_string($value) && $this-> $this->_maxItemSize !== null) {
+        if (is_string($value) && $this->_maxItemSize !== null) {
             return strlen($value) <= $this->_maxItemSize;
         } else {
             return true;
@@ -50,6 +50,18 @@ trait CacheTrait
             return false; // ===> FALSE & EXIT
         }
         return parent::addValue($key, $value, $duration);
+    }
+
+    public static function gzSerialize($data)
+    {
+        $serialized = serialize($data);
+        return gzdeflate($serialized, 3);
+    }
+
+    public static function gzUnserialize($data)
+    {
+        $serialized = gzinflate($data);
+        return unserialize($serialized);
     }
 
 }

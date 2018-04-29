@@ -37,7 +37,18 @@ class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\
         parent::init();
         foreach ($this->_caches as $k => $o) {
             $this->_caches[$k] = \yii\di\Instance::ensure($o);
+            if ($this->serializer !== false)
+                $this->_caches[$k]->serializer = false;
         }
+    }
+    
+    public function setCaches($caches){
+        $this->_caches = $caches;
+    }
+    
+    public function getCaches()
+    {
+        return $this->_caches;
     }
 
     /**
@@ -45,9 +56,11 @@ class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\
      */
     protected function addValue($key, $value, $duration)
     {
+        if (!$this->canSave($value))
+            return false; 
         $result = false;
-        foreach ($this->_caches[] as $i => $o) {
-            if ($o->addValue($key, $value, $duration)) {
+        foreach ($this->_caches as $i => $o) {
+            if ($o->add($key, $value, $duration)) {
                 $result = true;
             }
         }
@@ -60,9 +73,9 @@ class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\
     protected function deleteValue($key)
     {
         $result = true;
-        foreach ($this->_caches[] as $i => $o) {
+        foreach ($this->_caches as $i => $o) {
             if ($o->exists($key)) {
-                if (!$o->deleteValue($key)) {
+                if (!$o->delete($key)) {
                     $result = false;
                 }
             }
@@ -76,8 +89,8 @@ class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\
     protected function flushValues()
     {
         $result = true;
-        foreach ($this->_caches[] as $i => $o) {
-            if (!$o->flushValues()) {
+        foreach ($this->_caches as $i => $o) {
+            if (!$o->flush()) {
                 $result = false;
             }
         }
@@ -89,8 +102,8 @@ class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\
      */
     protected function getValue($key)
     {
-        foreach ($this->_caches[] as $i => $o) {
-            $result = $o->getValue();
+        foreach ($this->_caches as $i => $o) {
+            $result = $o->get($key);
             if ($result !== FALSE)
                 return $result; // found ===> RETURN & EXIT
         }
@@ -102,9 +115,11 @@ class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\
      */
     protected function setValue($key, $value, $duration)
     {
+        if (!$this->canSave($value))
+            return false; 
         $result = false;
-        foreach ($this->_caches[] as $i => $o) {
-            if ($o->setValue($key, $value, $duration)) {
+        foreach ($this->_caches as $i => $o) {
+            if ($o->set($key, $value, $duration)) {
                 $result = true;
             }
         }

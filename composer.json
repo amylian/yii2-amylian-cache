@@ -1,6 +1,16 @@
 {
   "name": "amylian/yii2-amylian-cache",
   "type": "yii2-extension",
+  "description": "ATTENTION EXPERIMENTAL! Extended Cache components for Yii2",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ],
+  "require": {
+    "amylian/yii2-amylian-base": "*"
+  },
   "autoload": {
     "psr-4": {
       "abexto\\amylian\\yii\\cache\\": "src/"
