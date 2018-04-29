@@ -11,7 +11,7 @@ namespace abexto\amylian\yii\cache\tests\units;
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-abstract class AbstractCacheTestCase extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
+abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
 {
 
     protected $_initialSetupDone = false;
