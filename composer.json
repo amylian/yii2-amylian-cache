@@ -3,7 +3,7 @@
   "type": "yii2-extension",
   "description": "ATTENTION EXPERIMENTAL! Extended Cache components for Yii2",
   "minimum-stability": "dev",
-  "prefere-stable": true,
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "composer",
