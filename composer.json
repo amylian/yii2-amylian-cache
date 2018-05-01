@@ -25,5 +25,5 @@
     "psr-4": {
       "abexto\\amylian\\yii\\cache\\tests\\": "tests/"
     }
-  }
+  } 
 }
