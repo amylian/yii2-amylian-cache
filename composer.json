@@ -2,6 +2,8 @@
   "name": "amylian/yii2-amylian-cache",
   "type": "yii2-extension",
   "description": "ATTENTION EXPERIMENTAL! Extended Cache components for Yii2",
+  "minimum-stability": "dev",
+  "prefere-stable": true,
   "repositories": [
     {
       "type": "composer",
