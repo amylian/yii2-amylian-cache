@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache;
+namespace amylian\yii\cache;
 
 /**
  * Description of FileCache

@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\cache\common;
+namespace amylian\yii\cache\common;
 
 /**
  *

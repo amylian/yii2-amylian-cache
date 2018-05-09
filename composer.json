@@ -18,12 +18,12 @@
   },
   "autoload": {
     "psr-4": {
-      "abexto\\amylian\\yii\\cache\\": "src/"
+      "amylian\\yii\\cache\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "abexto\\amylian\\yii\\cache\\tests\\": "tests/"
+      "amylian\\yii\\cache\\tests\\": "tests/"
     }
   } 
 }

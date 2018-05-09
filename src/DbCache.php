@@ -32,7 +32,7 @@
  * 
  */
 
-namespace abexto\amylian\yii\cache;
+namespace amylian\yii\cache;
 
 /**
  * Description of DbCache

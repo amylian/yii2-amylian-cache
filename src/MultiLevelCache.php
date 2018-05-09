@@ -4,14 +4,14 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache;
+namespace amylian\yii\cache;
 
 /**
  * Description of MultiLevelCache
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-class MultiLevelCache extends \yii\caching\Cache implements \abexto\amylian\yii\cache\common\CacheInterface
+class MultiLevelCache extends \yii\caching\Cache implements \amylian\yii\cache\common\CacheInterface
 {
 
     use common\CacheTrait;

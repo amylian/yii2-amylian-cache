@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache\tests\units;
+namespace amylian\yii\cache\tests\units;
 
 /**
  * Description of FileCacheTestCase
@@ -19,11 +19,11 @@ class MultiLevelCacheTest extends AbstractCacheTest
         return [
             'components' => [
                 'cache' => [
-                    'class'  => \abexto\amylian\yii\cache\MultiLevelCache::class,
+                    'class'  => \amylian\yii\cache\MultiLevelCache::class,
                     'caches' => [
-                        ['class'       => \abexto\amylian\yii\cache\ArrayCache::class,
+                        ['class'       => \amylian\yii\cache\ArrayCache::class,
                             'maxItemSize' => 0xFF],
-                        ['class'       => \abexto\amylian\yii\cache\FileCache::class,
+                        ['class'       => \amylian\yii\cache\FileCache::class,
                             'maxItemSize' => null],
                     ]
                 ]

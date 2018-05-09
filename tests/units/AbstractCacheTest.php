@@ -4,14 +4,14 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache\tests\units;
+namespace amylian\yii\cache\tests\units;
 
 /**
  * Description of FileCacheTestCase
  *
  * @author Andreas Prucha, Abexto - Helicon Software Development
  */
-abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYiiTestCase
+abstract class AbstractCacheTest extends \amylian\yii\phpunit\AbstractYiiTestCase
 {
 
     protected $_initialSetupDone = false;
@@ -28,7 +28,7 @@ abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYii
         \Yii::$app->cache->flush();
         for ($n = 0; $n < 10; $n++) {
             $k                      = 'key' . $n;
-            $this->_initialData[$k] = new \abexto\amylian\yii\cache\tests\classes\TestData($n);
+            $this->_initialData[$k] = new \amylian\yii\cache\tests\classes\TestData($n);
             \Yii::$app->cache->add($k, $this->_initialData[$k]);
         }
     }
@@ -53,7 +53,7 @@ abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYii
     
     public function testAddGet()
     {
-        $testData = new \abexto\amylian\yii\cache\tests\classes\TestData('AddGet');
+        $testData = new \amylian\yii\cache\tests\classes\TestData('AddGet');
         $addResult = \Yii::$app->cache->add('testAddGet', $testData);
         $getResult = \Yii::$app->cache->get('testAddGet');
         $this->assertTrue($addResult);
@@ -75,7 +75,7 @@ abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYii
 
     public function testNotExceedingLimit()
     {
-        $testData  = new \abexto\amylian\yii\cache\tests\classes\TestData(str_pad('', 0xFFF, 'x'));
+        $testData  = new \amylian\yii\cache\tests\classes\TestData(str_pad('', 0xFFF, 'x'));
         $setResult = \Yii::$app->cache->set('keyHuge', $testData);
         $getResult = \Yii::$app->cache->get('keyHuge');
         $this->assertTrue($setResult);
@@ -85,7 +85,7 @@ abstract class AbstractCacheTest extends \abexto\amylian\yii\phpunit\AbstractYii
     public function testSetExceedingLimit()
     {
         $setResult = \Yii::$app->cache->set('keyHuge',
-                                            new \abexto\amylian\yii\cache\tests\classes\TestData(str_pad('', 0xFFFF + 1, 'x')));
+                                            new \amylian\yii\cache\tests\classes\TestData(str_pad('', 0xFFFF + 1, 'x')));
         $this->assertFalse($setResult);
     }
 

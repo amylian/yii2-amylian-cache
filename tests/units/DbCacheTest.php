@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache\tests\units;
+namespace amylian\yii\cache\tests\units;
 
 /**
  * Description of FileCacheTestCase
@@ -39,7 +39,7 @@ class DbCacheTest extends AbstractCacheTest
                     'password' => $_ENV['db_password'],
                 ],
                 'cache' => [
-                    'class' => \abexto\amylian\yii\cache\DbCache::class
+                    'class' => \amylian\yii\cache\DbCache::class
                 ]
             ]
         ];

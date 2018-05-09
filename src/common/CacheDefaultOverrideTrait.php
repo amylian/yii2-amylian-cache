@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache\common;
+namespace amylian\yii\cache\common;
 
 /**
  * Default method overrides for standard Yii2 Cache components 

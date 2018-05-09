@@ -4,7 +4,7 @@
  * Copyright 2018 Andreas Prucha, Abexto - Helicon Software Development.
  */
 
-namespace abexto\amylian\yii\cache\tests\units;
+namespace amylian\yii\cache\tests\units;
 
 /**
  * Description of FileCacheTestCase
@@ -18,7 +18,7 @@ class FileCacheTest extends AbstractCacheTest
         return [
             'components' => [
                 'cache' => [
-                    'class' => \abexto\amylian\yii\cache\FileCache::class
+                    'class' => \amylian\yii\cache\FileCache::class
                 ]
             ]
         ];
