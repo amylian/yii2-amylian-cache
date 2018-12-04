@@ -1,29 +1,29 @@
 {
-  "name": "amylian/yii2-amylian-cache",
-  "type": "yii2-extension",
-  "description": "ATTENTION EXPERIMENTAL! Extended Cache components for Yii2",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
-    }
-  ],
-  "require": {
-    "amylian/yii2-amylian-base": "*"
-  },
-  "require-dev": {
-    "amylian/yii2-amylian-phpunit": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "amylian\\yii\\cache\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "amylian\\yii\\cache\\tests\\": "tests/"
-    }
-  } 
+	"name" : "amylian/yii2-amylian-cache",
+	"type" : "yii2-extension",
+	"description" : "ATTENTION EXPERIMENTAL! Extended Cache components for Yii2",
+	"minimum-stability" : "dev",
+	"prefer-stable" : true,
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "https://asset-packagist.org"
+		}
+	],
+	"require" : {
+		"amylian/yii2-amylian-base" : "*"
+	},
+	"require-dev" : {
+		"amylian/yii2-amylian-phpunit" : "*",
+		"phpunit/phpunit": "*"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"amylian\\yii\\cache\\" : "src/"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"amylian\\yii\\cache\\tests\\" : "tests/"
+		}
+	}
 }
