@@ -18,7 +18,7 @@ class FileCache extends \yii\caching\FileCache implements common\CacheInterface
 
     /**
      *
-     * @var type ̍@var bool Use file_exists before reading the cache file
+     * @var bool Use file_exists before reading the cache file
      */
     public $saveMode = true;
     
